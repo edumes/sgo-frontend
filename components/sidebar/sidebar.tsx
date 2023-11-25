@@ -1,17 +1,17 @@
 import React from "react";
 import { Sidebar } from "./sidebar.styles";
 import { Image } from "@nextui-org/react";
-import { HomeIcon } from "../icons/sidebar/home-icon";
-import { AccountsIcon } from "../icons/sidebar/accounts-icon";
-import { ReportsIcon } from "../icons/sidebar/reports-icon";
+import { HomeIcon } from "../icons/home-icon";
+import { AccountsIcon } from "../icons/accounts-icon";
+import { ReportsIcon } from "../icons/reports-icon";
 import { SidebarItem } from "./sidebar-item";
 import { SidebarMenu } from "./sidebar-menu";
 import { useSidebarContext } from "../layout/layout-context";
 import { useRouter } from "next/router";
-import { SheepIcon } from "../icons/sidebar/sheep-icon";
-import { GoatIcon } from "../icons/sidebar/goat-icon";
-import { GlobeIcon } from "../icons/sidebar/globe-icon";
-import { UsersIcon } from "../icons/breadcrumb/users-icon";
+import { SheepIcon } from "../icons/sheep-icon";
+import { GoatIcon } from "../icons/goat-icon";
+import { GlobeIcon } from "../icons/globe-icon";
+import { UsersIcon } from "../icons/users-icon";
 
 export const SidebarWrapper = () => {
   const router = useRouter();

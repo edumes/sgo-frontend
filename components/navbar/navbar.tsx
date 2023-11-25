@@ -1,12 +1,12 @@
 import { Navbar, NavbarContent } from "@nextui-org/react";
 import React from "react";
 import { useRouter } from "next/router";
-import { SupportIcon } from "../icons/navbar/support-icon";
+import { SupportIcon } from "../icons/support-icon";
 import { Breadcrumbs, BreadcrumbItem } from "@nextui-org/react";
 import { BurguerButton } from "./burguer-button";
 import { NotificationsDropdown } from "./notifications-dropdown";
 import { UserDropdown } from "./user-dropdown";
-import { HouseIcon } from "../icons/breadcrumb/house-icon";
+import { HouseIcon } from "../icons/house-icon";
 
 interface Props {
   children: React.ReactNode;

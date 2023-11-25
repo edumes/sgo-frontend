@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { Button, ButtonGroup, Card, CardBody, Divider } from "@nextui-org/react";
-import { SheepIcon } from "../components/icons/sidebar/sheep-icon";
+import { SheepIcon } from "../components/icons/sheep-icon";
 import { Table } from "../components/table/table";
 
 const Sheeps: NextPage = () => {
