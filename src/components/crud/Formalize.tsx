@@ -9,6 +9,7 @@ import { container, item } from "../motion/motionSettings";
 import { useEffect, useState } from "react";
 import { MinusIcon } from "../icons/minus-icon";
 import { PlusIcon } from "../icons/plus-icon";
+import { BackIcon } from "../icons/back-icon";
 
 interface FormalizeProps {
     withNavs?: boolean;
@@ -134,13 +135,15 @@ const Formalize: NextPage<FormalizeProps> = ({ withNavs }) => {
                         initial="hidden"
                         animate="visible"
                     >
-                        <Button size="lg" color="success" variant="shadow">
-                            Salvar
-                        </Button>
+                        <div className="mr-auto">
+                            <Button size="md" variant="ghost">
+                                <BackIcon size="20" /> Voltar
+                            </Button>
+                        </div>
                     </motion.ul>
                 </Form>
             </Panel>
-        </motion.div>
+        </motion.div >
     );
 };
 

@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { useRouter } from "next/router";
 import { Button, ButtonGroup, Card, CardBody, Divider } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { container, item } from "../motion/motionSettings";
@@ -11,6 +12,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ crudName, crudMethod, crudIcon, divider }) => {
+    const Router = useRouter();
     return (
         <motion.div
             className="container"
@@ -27,8 +29,8 @@ const Header: React.FC<HeaderProps> = ({ crudName, crudMethod, crudIcon, divider
 
                             <div className="ml-auto">
                                 <ButtonGroup variant="faded">
-                                    <Button>Voltar</Button>
-                                    <Button variant="bordered" color="success">Adicionar</Button>
+                                    <Button onClick={() => Router.back()}>Voltar</Button>
+                                    <Button onClick={() => Router.push('/add')} variant="bordered" color="success">Adicionar</Button>
                                 </ButtonGroup>
                             </div>
                         </div>
