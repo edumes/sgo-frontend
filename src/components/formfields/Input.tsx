@@ -8,7 +8,7 @@ interface InputProps extends RsuiteInputProps {
 }
 
 const Input: React.FC<InputProps> = ({ label, startContent, endContent, as = 'input', ...rest }) => {
-    const renderLabel = label && <label>{label.toLocaleUpperCase()}</label>;
+    const renderLabel = label && <label style={{ fontSize: 16, fontWeight: "bold" }}>{label.toLocaleUpperCase()}</label>;
     const hasAddon = startContent || endContent;
 
     return (
@@ -18,11 +18,11 @@ const Input: React.FC<InputProps> = ({ label, startContent, endContent, as = 'in
             {hasAddon ? (
                 <InputGroup>
                     {startContent && <InputGroup.Addon>{startContent}</InputGroup.Addon>}
-                    <RsuiteInput as={as} block {...rest} />
+                    <RsuiteInput as={as} block="true" {...rest} />
                     {endContent && <InputGroup.Addon>{endContent}</InputGroup.Addon>}
                 </InputGroup>
             ) : (
-                <RsuiteInput as={as} block {...rest} />
+                <RsuiteInput as={as} block="true" {...rest} />
             )}
         </>
     );

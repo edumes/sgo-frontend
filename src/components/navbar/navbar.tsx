@@ -7,6 +7,8 @@ import { BurguerButton } from "./burguer-button";
 import { NotificationsDropdown } from "./notifications-dropdown";
 import { UserDropdown } from "./user-dropdown";
 import { HouseIcon } from "../icons/house-icon";
+import { container } from "../motion/motionSettings";
+import { motion } from "framer-motion";
 
 interface Props {
   children: React.ReactNode;
@@ -33,15 +35,22 @@ export const NavbarWrapper = ({ children }: Props) => {
         </NavbarContent>
 
         <NavbarContent className="max-md:hidden">
-          <Breadcrumbs size="lg" separator="/">
-            <BreadcrumbItem startContent={<HouseIcon />} href="/painel">Painel</BreadcrumbItem>
-            {currentPage == "painel" ? (
-              <>
-              </>
-            ) : (
-              <BreadcrumbItem>{capitalizePageText}</BreadcrumbItem>
-            )}
-          </Breadcrumbs>
+          <motion.ul
+            className="container"
+            variants={container}
+            initial="hidden"
+            animate="visible"
+          >
+            <Breadcrumbs size="lg" separator="/">
+              <BreadcrumbItem startContent={<HouseIcon />} href="/painel">Painel</BreadcrumbItem>
+              {currentPage == "painel" ? (
+                <>
+                </>
+              ) : (
+                <BreadcrumbItem>{capitalizePageText}</BreadcrumbItem>
+              )}
+            </Breadcrumbs>
+          </motion.ul>
         </NavbarContent>
 
         <NavbarContent className="w-full max-md:hidden">
@@ -60,25 +69,34 @@ export const NavbarWrapper = ({ children }: Props) => {
           justify="end"
           className="w-fit data-[justify=end]:flex-grow-0"
         >
-          {/* <div className="flex items-center gap-2 max-md:hidden">
-            <FeedbackIcon />
-            <span>Feedback?</span>
-          </div> */}
-
-          <NotificationsDropdown />
-
-          <div className="max-md:hidden">
-            <SupportIcon />
-          </div>
-
-          {/* <Link
-            href="https://github.com/Siumauricio/nextui-dashboard-template"
-            target={"_blank"}
+          <motion.ul
+            className="container"
+            variants={container}
+            initial="hidden"
+            animate="visible"
           >
-            <GithubIcon />
-          </Link> */}
+            <NotificationsDropdown />
+          </motion.ul>
+
+          <motion.ul
+            className="container"
+            variants={container}
+            initial="hidden"
+            animate="visible"
+          >
+            <div className="max-md:hidden">
+              <SupportIcon />
+            </div>
+          </motion.ul>
           <NavbarContent>
-            <UserDropdown />
+            <motion.ul
+              className="container"
+              variants={container}
+              initial="hidden"
+              animate="visible"
+            >
+              <UserDropdown />
+            </motion.ul>
           </NavbarContent>
         </NavbarContent>
       </Navbar>
