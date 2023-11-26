@@ -83,35 +83,61 @@ const Formalize: NextPage<FormalizeProps> = ({ withNavs }) => {
 
                             <motion.li className="item" variants={item}>
                                 <FlexboxGrid.Item as={Col} order={2} colspan={24} md={6} style={{ marginBottom: 20 }}>
-                                    <Input size={sizeClass} label="descrição" />
+                                    <Input
+                                        size={sizeClass}
+                                        label="descrição"
+                                    />
                                 </FlexboxGrid.Item>
                             </motion.li>
 
                             <motion.li className="item" variants={item}>
                                 <FlexboxGrid.Item as={Col} order={3} colspan={24} md={6} style={{ marginBottom: 20 }}>
-                                    <Input size={sizeClass} label="item2" />
+                                    <Input
+                                        size={sizeClass}
+                                        label="item2"
+                                    />
                                 </FlexboxGrid.Item>
                             </motion.li>
 
                             <motion.li className="item" variants={item}>
-                                <FlexboxGrid.Item as={Col} order={3} colspan={24} md={6} style={{ marginBottom: 20 }}>
-                                    <Select size={sizeClass} label="teste" data={[]} />
+                                <FlexboxGrid.Item as={Col} order={4} colspan={24} md={6} style={{ marginBottom: 20 }}>
+                                    <Select
+                                        size={sizeClass}
+                                        label="teste"
+                                        data={[]}
+                                    />
                                 </FlexboxGrid.Item>
                             </motion.li>
 
                             <motion.li className="item" variants={item}>
-                                <FlexboxGrid.Item as={Col} order={3} colspan={24} md={6} style={{ marginBottom: 20 }}>
-                                    <Input size={sizeClass} label="item2" />
+                                <FlexboxGrid.Item as={Col} order={5} colspan={24} md={6} style={{ marginBottom: 20 }}>
+                                    <Input
+                                        size={sizeClass}
+                                        label="item2"
+                                    />
                                 </FlexboxGrid.Item>
                             </motion.li>
 
                             <motion.li className="item" variants={item}>
-                                <FlexboxGrid.Item as={Col} order={3} colspan={24} md={6} style={{ marginBottom: 20 }}>
-                                    <Input size={sizeClass} label="item2" />
+                                <FlexboxGrid.Item as={Col} order={6} colspan={24} md={6} style={{ marginBottom: 20 }}>
+                                    <Input
+                                        size={sizeClass}
+                                        label="item2"
+                                    />
                                 </FlexboxGrid.Item>
                             </motion.li>
                         </motion.ul>
                     </FlexboxGrid>
+                    <motion.ul
+                        className="container"
+                        variants={container}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        <Button size="lg" color="success" variant="shadow">
+                            Salvar
+                        </Button>
+                    </motion.ul>
                 </Form>
             </Panel>
         </motion.div>
