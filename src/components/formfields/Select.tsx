@@ -1,6 +1,7 @@
 import { Spinner } from '@nextui-org/react';
 import React, { ReactNode, useState } from 'react';
 import { SelectPicker as RsuiteSelectPicker, SelectPickerProps as RsuiteSelectPickerProps } from 'rsuite';
+import Label from './Label';
 
 interface ItemType {
   label: string;
@@ -9,15 +10,16 @@ interface ItemType {
 
 interface SelectPickerProps extends RsuiteSelectPickerProps<ItemType> {
   label?: string;
+  size?: Sizes;
 }
 
 const data: ItemType[] = ['Eugenia', 'Bryan', 'Linda', 'Nancy', 'Lloyd', 'Alice', 'Julia', 'Albert'].map(
   item => ({ label: item, value: item })
 );
 
-const Select: React.FC<SelectPickerProps> = ({ label, ...rest }) => {
+const Select: React.FC<SelectPickerProps> = ({ label, size, ...rest }) => {
   const [loading, setLoading] = useState<boolean>(true);
-  const renderLabel = label && <label style={{ fontSize: 16, fontWeight: "bold" }}>{label.toLocaleUpperCase()}</label>;
+  const renderLabel = label && <Label size={size}>{label}</Label>;
 
   const renderMenu = (menu: any) => {
     if (loading) {
@@ -36,6 +38,7 @@ const Select: React.FC<SelectPickerProps> = ({ label, ...rest }) => {
 
       <RsuiteSelectPicker
         data={data}
+        size={size}
         block
         placeholder='Selecione'
         preventOverflow
@@ -46,7 +49,7 @@ const Select: React.FC<SelectPickerProps> = ({ label, ...rest }) => {
         {...rest}
       />
 
-    {/* <motion.div
+      {/* <motion.div
         layout
         data-isOpen={isOpen}
         initial={{ borderRadius: 50 }}

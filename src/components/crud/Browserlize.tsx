@@ -31,6 +31,14 @@ export const Table = ({ data = [] }: Props) => {
           <HeaderCell>Descrição</HeaderCell>
           <Cell dataKey="description" />
         </Column>
+        <Column width={400} sortable minWidth={200} resizable>
+          <HeaderCell>Descrição</HeaderCell>
+          <Cell dataKey="description" />
+        </Column>
+        <Column width={400} sortable minWidth={200} resizable>
+          <HeaderCell>Descrição</HeaderCell>
+          <Cell dataKey="description" />
+        </Column>
 
         <Column width={150} sortable minWidth={200} resizable>
           <HeaderCell>Fabricante</HeaderCell>

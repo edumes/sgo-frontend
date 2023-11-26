@@ -30,7 +30,7 @@ const colorPaletteLightMode = {
 const colorPaletteDarkMode = {
   primary: {
     50: "#E1FAE1",
-    100: "#C7F5C7",
+    100: "#061E05",
     200: "#90EB8E",
     300: "#58E156",
     400: "#26CC24",
@@ -66,11 +66,6 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
-    extend: {
-      colors: colorPaletteLightMode,
-    },
-  },
   darkMode: "class",
   plugins: [nextui({
     themes: {
