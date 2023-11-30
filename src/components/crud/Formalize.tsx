@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { MinusIcon } from "../icons/minus-icon";
 import { PlusIcon } from "../icons/plus-icon";
 import { BackIcon } from "../icons/back-icon";
+import { RightIcon } from "../icons/right-icon";
 
 interface FormalizeProps {
     withNavs?: boolean;
@@ -139,6 +140,11 @@ const Formalize: NextPage<FormalizeProps> = ({ withNavs }) => {
                             <Button size="md" variant="ghost">
                                 <BackIcon size="20" /> Voltar
                             </Button>
+                            <div className="ml-auto float-right">
+                                <Button size="md" color="success" style={{ color: "#FFF" }} variant="solid">
+                                    Avançar <RightIcon color="#FFF" size="20" />
+                                </Button>
+                            </div>
                         </div>
                     </motion.ul>
                 </Form>

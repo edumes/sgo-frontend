@@ -18,4 +18,14 @@ const item = {
     }
 };
 
-export { container, item };
+const text = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.04
+        }
+    }
+};
+
+export { container, item, text };
