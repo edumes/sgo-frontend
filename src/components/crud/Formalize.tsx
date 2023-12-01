@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { Button, ButtonGroup } from "@nextui-org/react";
 import { Panel, FlexboxGrid, Col, Form, Nav } from "rsuite";
-import { useForm } from 'react-hook-form';
+// import { useForm } from 'react-hook-form';
 import Input from "../formfields/Input";
 import Select from "../formfields/Select";
 import { motion } from "framer-motion";
@@ -11,49 +11,31 @@ import { MinusIcon } from "../icons/minus-icon";
 import { PlusIcon } from "../icons/plus-icon";
 import { BackIcon } from "../icons/back-icon";
 import { RightIcon } from "../icons/right-icon";
+import useComponentSize from "../../utils/useComponentSize";
 
 interface FormalizeProps {
     withNavs?: boolean;
 }
 
 const Formalize: NextPage<FormalizeProps> = ({ withNavs }) => {
-    const [size, setSize] = useState<number>(75);
-    const [sizeClass, setSizeClass] = useState<Sizes>('xs');
-
-    const increaseSize = () => {
-        if (size < 100) {
-            setSize((prevSize) => prevSize + 25);
-        }
-    };
-
-    const decreaseSize = () => {
-        if (size > 0) {
-            setSize((prevSize) => Math.max(prevSize - 25, 0));
-        }
-    };
-
-    const isDecreaseDisabled = size === 25;
-    const isIncreaseDisabled = size === 100;
-
-    useEffect(() => {
-        if (size === 25) {
-            setSizeClass("xs");
-        } else if (size === 50) {
-            setSizeClass("sm");
-        } else if (size === 75) {
-            setSizeClass("md");
-        } else if (size === 100) {
-            setSizeClass("lg");
-        }
-    }, [size]);
+    const {
+        size,
+        sizeClass,
+        increaseSize,
+        decreaseSize,
+        isDecreaseDisabled,
+        isIncreaseDisabled,
+    } = useComponentSize();
 
     return (
         <motion.div className="item" variants={item}>
-            <Nav appearance="tabs">
-                <Nav.Item active={true}>Dados Principais</Nav.Item>
-                <Nav.Item>tab 2</Nav.Item>
-                <Nav.Item>tab 3</Nav.Item>
-            </Nav>
+            {withNavs && (
+                <Nav appearance="tabs">
+                    <Nav.Item active={true}>Dados Principais</Nav.Item>
+                    <Nav.Item>tab 2</Nav.Item>
+                    <Nav.Item>tab 3</Nav.Item>
+                </Nav>
+            )}
             <Panel bordered>
                 <Form>
                     <FlexboxGrid justify="start" align="middle">

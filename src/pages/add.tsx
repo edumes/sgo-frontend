@@ -23,7 +23,7 @@ const Add: NextPage = () => {
             // divider
             />
 
-            <Formalize />
+            <Formalize withNavs />
         </div>
     );
 };
