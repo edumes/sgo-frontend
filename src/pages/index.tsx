@@ -69,7 +69,7 @@ const Login: NextPage = () => {
               >
                 Lembrar de mim
               </Checkbox>
-              <Link href="/register">
+              <Link href="/register" style={{ textDecoration: 'none' }}>
                 Criar nova conta
               </Link>
             </div>
