@@ -215,7 +215,7 @@ const Formalize: NextPage<FormalizeProps> = ({ withNavs }) => {
             )}
             <Panel bordered>
                 <Form>
-                    <FlexboxGrid justify="start" align="middle">
+                    <FlexboxGrid justify="start">
                         <div className="ml-auto mb-4">
                             <ButtonGroup size="sm" variant="faded">
                                 <Button variant="ghost" onClick={decreaseSize} disabled={isDecreaseDisabled}>

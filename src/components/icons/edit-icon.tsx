@@ -1,44 +1,7 @@
-interface Props {
-   size?: number;
-   fill?: string;
-   width?: number;
-   height?: number;
-}
+import React from "react";
 
-export const EditIcon = ({fill, size, height, width, ...props}: Props) => {
+export const EditIcon: React.FC<SVGIconProps> = ({ size = "32", color = "#969696" }) => {
    return (
-      <svg
-         width={size || width || 24}
-         height={size || height || 24}
-         viewBox="0 0 20 20"
-         fill="none"
-         xmlns="http://www.w3.org/2000/svg"
-         {...props}
-      >
-         <path
-            d="M11.05 3.00002L4.20835 10.2417C3.95002 10.5167 3.70002 11.0584 3.65002 11.4334L3.34169 14.1334C3.23335 15.1084 3.93335 15.775 4.90002 15.6084L7.58335 15.15C7.95835 15.0834 8.48335 14.8084 8.74168 14.525L15.5834 7.28335C16.7667 6.03335 17.3 4.60835 15.4583 2.86668C13.625 1.14168 12.2334 1.75002 11.05 3.00002Z"
-            stroke={fill}
-            strokeWidth={1.5}
-            strokeMiterlimit={10}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-         />
-         <path
-            d="M9.90833 4.20831C10.2667 6.50831 12.1333 8.26665 14.45 8.49998"
-            stroke={fill}
-            strokeWidth={1.5}
-            strokeMiterlimit={10}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-         />
-         <path
-            d="M2.5 18.3333H17.5"
-            stroke={fill}
-            strokeWidth={1.5}
-            strokeMiterlimit={10}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-         />
-      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" height={size} width={size} fill={color} viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4 .4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z" /></svg>
    );
 };

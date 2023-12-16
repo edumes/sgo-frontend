@@ -1,54 +1,7 @@
-interface Props {
-   size?: number;
-   fill?: string;
-   width?: number;
-   height?: number;
-}
-export const DeleteIcon = ({fill, size, height, width, ...props}: Props) => {
+import React from "react";
+
+export const DeleteIcon: React.FC<SVGIconProps> = ({ size = "32", color = "#969696" }) => {
    return (
-      <svg
-         width={size || width || 24}
-         height={size || height || 24}
-         viewBox="0 0 20 20"
-         fill="none"
-         xmlns="http://www.w3.org/2000/svg"
-         {...props}
-      >
-         <path
-            d="M17.5 4.98332C14.725 4.70832 11.9333 4.56665 9.15 4.56665C7.5 4.56665 5.85 4.64998 4.2 4.81665L2.5 4.98332"
-            stroke={fill}
-            strokeWidth={1.5}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-         />
-         <path
-            d="M7.08331 4.14169L7.26665 3.05002C7.39998 2.25835 7.49998 1.66669 8.90831 1.66669H11.0916C12.5 1.66669 12.6083 2.29169 12.7333 3.05835L12.9166 4.14169"
-            stroke={fill}
-            strokeWidth={1.5}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-         />
-         <path
-            d="M15.7084 7.61664L15.1667 16.0083C15.075 17.3166 15 18.3333 12.675 18.3333H7.32502C5.00002 18.3333 4.92502 17.3166 4.83335 16.0083L4.29169 7.61664"
-            stroke={fill}
-            strokeWidth={1.5}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-         />
-         <path
-            d="M8.60834 13.75H11.3833"
-            stroke={fill}
-            strokeWidth={1.5}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-         />
-         <path
-            d="M7.91669 10.4167H12.0834"
-            stroke={fill}
-            strokeWidth={1.5}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-         />
-      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} fill={color} viewBox="0 0 256 256"><path d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM112,168a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm0-120H96V40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8Z"></path></svg>
    );
 };
